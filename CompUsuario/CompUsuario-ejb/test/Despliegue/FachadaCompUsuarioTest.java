@@ -83,13 +83,43 @@ public class FachadaCompUsuarioTest {
      * Test of getEmpleado method, of class FachadaCompUsuario.
      */
     @Test
-    public void testGetEmpleado() throws Exception {
-        System.out.println("getEmpleado");
-        String nifcif = "";
+    public void testGetEmpleado_NULL() throws Exception {
+        System.out.println("getEmpleado: no existe");
+        String nifcif = "NoExiste";
         FachadaCompUsuarioLocal instance = (FachadaCompUsuarioLocal)container.getContext().lookup("java:global/classes/FachadaCompUsuario");
         Empleado expResult = null;
         Empleado result = instance.getEmpleado(nifcif);
         assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test of getEmpleado method, of class FachadaCompUsuario.
+     */
+    @Test
+    public void testGetEmpleado_NoNULL_rol() throws Exception {
+        System.out.println("getEmpleado: existe y es GerenteVentas");
+        String nifcif = "444444U";
+        FachadaCompUsuarioLocal instance = (FachadaCompUsuarioLocal)container.getContext().lookup("java:global/classes/FachadaCompUsuario");
+        String expResult = "GerenteVentas";
+        Empleado result = instance.getEmpleado(nifcif);
+        assertEquals("Empleado es GerenteVentas",expResult, result.getRol().getNombrerol());
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test of getEmpleado method, of class FachadaCompUsuario.
+     */
+    @Test
+    public void testGetEmpleado_NoNULL_password() throws Exception {
+        System.out.println("getEmpleado: existe y comprobamos su password");
+        String nifcif = "222222U";
+        FachadaCompUsuarioLocal instance = (FachadaCompUsuarioLocal)container.getContext().lookup("java:global/classes/FachadaCompUsuario");
+        String expResult = "222";
+        Empleado result = instance.getEmpleado(nifcif);
+        assertEquals("Empleado es GerenteVentas",expResult, result.getUsuario().getPassword());
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
