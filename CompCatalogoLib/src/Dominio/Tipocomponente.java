@@ -17,13 +17,16 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author arome
+ * @author Propietario
  */
 @Entity
 @Table(name = "TIPOCOMPONENTE")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Tipocomponente.findAll", query = "SELECT t FROM Tipocomponente t"),
     @NamedQuery(name = "Tipocomponente.findByIdtipocomponente", query = "SELECT t FROM Tipocomponente t WHERE t.idtipocomponente = :idtipocomponente"),
@@ -68,6 +71,7 @@ public class Tipocomponente implements Serializable {
         this.nombretipocomponente = nombretipocomponente;
     }
 
+    @XmlTransient
     public List<Descripcioncomponente> getDescripcioncomponenteList() {
         return descripcioncomponenteList;
     }

@@ -10,7 +10,7 @@ import javax.persistence.EntityManager;
 
 /**
  *
- * @author arome
+ * @author Propietario
  */
 public abstract class AbstractFacade<T> {
     private Class<T> entityClass;
@@ -37,14 +37,13 @@ public abstract class AbstractFacade<T> {
     }
 
     public T find(Object id) {
-        T objeto = getEntityManager().find(entityClass, id);
         getEntityManager().flush();
-        return objeto;
+        return getEntityManager().find(entityClass, id);
     }
 
     public List<T> findAll() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        cq.select(cq.from(entityClass));        
+        cq.select(cq.from(entityClass));
         return getEntityManager().createQuery(cq).getResultList();
     }
 

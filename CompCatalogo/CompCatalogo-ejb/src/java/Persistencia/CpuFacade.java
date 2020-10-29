@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author arome
+ * @author Propietario
  */
 @Stateless
 public class CpuFacade extends AbstractFacade<Cpu> implements CpuFacadeLocal {

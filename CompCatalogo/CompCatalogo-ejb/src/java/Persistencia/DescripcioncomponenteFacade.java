@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author arome
+ * @author Propietario
  */
 @Stateless
 public class DescripcioncomponenteFacade extends AbstractFacade<Descripcioncomponente> implements DescripcioncomponenteFacadeLocal {

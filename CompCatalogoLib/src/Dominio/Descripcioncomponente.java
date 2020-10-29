@@ -18,13 +18,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author arome
+ * @author Propietario
  */
 @Entity
 @Table(name = "DESCRIPCIONCOMPONENTE")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Descripcioncomponente.findAll", query = "SELECT d FROM Descripcioncomponente d"),
     @NamedQuery(name = "Descripcioncomponente.findByIddescripcion", query = "SELECT d FROM Descripcioncomponente d WHERE d.iddescripcion = :iddescripcion"),
@@ -105,6 +108,7 @@ public class Descripcioncomponente implements Serializable {
         this.caracteristicastecnicas = caracteristicastecnicas;
     }
 
+    @XmlTransient
     public List<Configuracionpc> getConfiguracionpcList() {
         return configuracionpcList;
     }

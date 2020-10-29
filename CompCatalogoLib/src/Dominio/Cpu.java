@@ -17,13 +17,16 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author arome
+ * @author Propietario
  */
 @Entity
 @Table(name = "CPU")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Cpu.findAll", query = "SELECT c FROM Cpu c"),
     @NamedQuery(name = "Cpu.findByIdtipocpu", query = "SELECT c FROM Cpu c WHERE c.idtipocpu = :idtipocpu"),
@@ -68,6 +71,7 @@ public class Cpu implements Serializable {
         this.nombretipocpu = nombretipocpu;
     }
 
+    @XmlTransient
     public List<Configuracionpc> getConfiguracionpcList() {
         return configuracionpcList;
     }
