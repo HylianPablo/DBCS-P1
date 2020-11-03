@@ -17,5 +17,7 @@ public interface fachadaCompPedidoLocal {
     float importeAbonar(String nifcif);
 
     boolean addPedido(int cantidad, int idConfiguracion, String nifcif);
+
+    boolean delPedido(int idConfiguracion, String nifcif);
     
 }

@@ -5,7 +5,9 @@
  */
 package Persistencia;
 
+import Dominio.Empresa;
 import Dominio.Pedidopc;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -26,6 +28,11 @@ public class PedidopcFacade extends AbstractFacade<Pedidopc> implements Pedidopc
 
     public PedidopcFacade() {
         super(Pedidopc.class);
+    }
+    
+    @Override
+    public List<Pedidopc> getPedidoByEncargadopor(Empresa empresa){
+        return em.createNamedQuery("Pedidopc.findByEncargador").setParameter(1,empresa).getResultList();
     }
     
 }

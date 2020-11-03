@@ -77,6 +77,25 @@ public class fachadaCompPedido implements fachadaCompPedidoLocal {
         }
         return true;
     }
+
+    @Override
+    public boolean delPedido(int idConfiguracion, String nifcif) {
+        Empresa empresa = empresaFacade.find(nifcif);
+        if(empresa==null){
+            return false;
+        }
+        List<Pedidopc> pedidosUsuario = pedidopcFacade.getPedidoByEncargadopor(empresa);
+        if(pedidosUsuario==null || pedidosUsuario.isEmpty()){
+            return false;
+        }
+        for(int i=0;i<pedidosUsuario.size();i++){
+            if(pedidosUsuario.get(i).getConfiguracionsolicitada().getIdconfiguracion()==idConfiguracion){
+                pedidopcFacade.remove(pedidosUsuario.get(i));
+                return true;
+            }
+        }
+        return false;
+    }
     
     
 }

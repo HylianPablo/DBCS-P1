@@ -5,6 +5,7 @@
  */
 package Persistencia;
 
+import Dominio.Empresa;
 import Dominio.Pedidopc;
 import java.util.List;
 import javax.ejb.Local;
@@ -29,5 +30,7 @@ public interface PedidopcFacadeLocal {
     List<Pedidopc> findRange(int[] range);
 
     int count();
+    
+    List<Pedidopc> getPedidoByEncargadopor(Empresa empresa);
     
 }

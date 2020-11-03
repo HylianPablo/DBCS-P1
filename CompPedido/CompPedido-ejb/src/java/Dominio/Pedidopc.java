@@ -27,7 +27,8 @@ import javax.validation.constraints.NotNull;
 @NamedQueries({
     @NamedQuery(name = "Pedidopc.findAll", query = "SELECT p FROM Pedidopc p"),
     @NamedQuery(name = "Pedidopc.findByIdpedido", query = "SELECT p FROM Pedidopc p WHERE p.idpedido = :idpedido"),
-    @NamedQuery(name = "Pedidopc.findByCantidadsolicitada", query = "SELECT p FROM Pedidopc p WHERE p.cantidadsolicitada = :cantidadsolicitada")})
+    @NamedQuery(name = "Pedidopc.findByCantidadsolicitada", query = "SELECT p FROM Pedidopc p WHERE p.cantidadsolicitada = :cantidadsolicitada"),
+    @NamedQuery(name = "Pedidopc.findByEncargador", query = "SELECT p FROM Pedidopc p WHERE p.encargadopor = ?1")})
 public class Pedidopc implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

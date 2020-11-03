@@ -41,8 +41,8 @@ public class ServletCompPedido extends HttpServlet {
         Boolean resAddPedido_Err = fachadaCompPedido.addPedido(3, 8888, "555555U"); // esa configuracion no existe
         Boolean resAddPedido_NoErr = fachadaCompPedido.addPedido(3, 3333, "555555U");
         
-        //Boolean resDelPedido_Err = fachadaCompPedido.delPedido(4444, "555555U"); // no hay ningun pedido de ese usuario con esa configuracion
-        //Boolean resDelPedido_NoErr = fachadaCompPedido.delPedido(2222, "555555U");
+        Boolean resDelPedido_Err = fachadaCompPedido.delPedido(4444, "555555U"); // no hay ningun pedido de ese usuario con esa configuracion
+        Boolean resDelPedido_NoErr = fachadaCompPedido.delPedido(2222, "555555U");
         
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -62,8 +62,8 @@ public class ServletCompPedido extends HttpServlet {
             out.println("<p>con error en idPedido. Respuesta: " + resAddPedido_Err + "</p>");
             out.println("<p>sin error. Respuesta: " + resAddPedido_NoErr + "</p>");
             out.println("<h2>*** Prueba delPedido: </h2>" );
-            //out.println("<p>con error debido a que no hay ningún pedido del usuario en la tabla con esa configuracion. Respuesta: " + resDelPedido_Err + "</p>");
-            //out.println("<p>sin error. Respuesta: " + resDelPedido_NoErr + "</p>");
+            out.println("<p>con error debido a que no hay ningún pedido del usuario en la tabla con esa configuracion. Respuesta: " + resDelPedido_Err + "</p>");
+            out.println("<p>sin error. Respuesta: " + resDelPedido_NoErr + "</p>");
             out.println("</body>");
             out.println("</html>");
         }
