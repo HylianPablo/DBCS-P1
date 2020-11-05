@@ -10,7 +10,8 @@ import javax.ejb.Remote;
 
 /**
  *
- * @author Propietario
+ * @author alerome
+ * @auhtor pamarti
  */
 @Remote
 public interface fachadaCompCatalogoRemote {

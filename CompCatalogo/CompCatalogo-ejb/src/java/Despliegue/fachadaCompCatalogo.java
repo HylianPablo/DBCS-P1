@@ -18,7 +18,8 @@ import javax.ejb.Stateless;
 
 /**
  *
- * @author arome
+ * @author alerome
+ * @author pamarti
  */
 @Stateless
 public class fachadaCompCatalogo implements fachadaCompCatalogoRemote {

@@ -15,7 +15,8 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Propietario
+ * @author alerome
+ * @author pamarti
  */
 public class fachadaCompPedidoTest {
     

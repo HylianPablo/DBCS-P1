@@ -15,7 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author arome
+ * @author alerome
+ * @author pamarti
  */
 @WebServlet(name = "ServletCompPedido",urlPatterns = {"/ServletCompPedido"})
 public class ServletCompPedido extends HttpServlet {

@@ -18,7 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author arome
+ * @author alerome
+ * @author pamarti
  */
 @WebServlet(name = "ServletCompCatalogo", urlPatterns = {"/ServletCompCatalogo"})
 public class ServletCompCatalogo2 extends HttpServlet {

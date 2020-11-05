@@ -9,7 +9,8 @@ import javax.ejb.Local;
 
 /**
  *
- * @author Propietario
+ * @author alerome
+ * @author pamarti
  */
 @Local
 public interface fachadaCompPedidoLocal {
