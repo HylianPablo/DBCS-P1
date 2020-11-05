@@ -5,8 +5,8 @@
  */
 package Despliegue;
 
-import Dominio.Configuracionpc;
-import Dominio.*;
+import DespliegueCompCatalogo.fachadaCompCatalogoRemote;
+import DominioCompCatalogo.Configuracionpc;
 import java.util.Arrays;
 import java.util.List;
 import javax.ejb.embeddable.EJBContainer;

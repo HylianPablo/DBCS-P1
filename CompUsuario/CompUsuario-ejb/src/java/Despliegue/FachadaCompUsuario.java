@@ -14,7 +14,8 @@ import javax.ejb.Stateless;
 
 /**
  *
- * @author Propietario
+ * @author alerome
+ * @author pamarti
  */
 
 @Stateless
@@ -24,7 +25,11 @@ public class FachadaCompUsuario implements FachadaCompUsuarioLocal {
     @EJB
     private EmpresaFacadeLocal empresaFacade;
     
-
+    /**
+     * Obtiene la empresa a la que pertenece un usuario.
+     * @param nifcif Cadena de caracteres que representa el NIF/CIF del usuario.
+     * @return Empresa a la que pertence el usuario.
+     */
     @Override
     public Empresa getEmpresa(String nifcif) {
         Empresa e = null;
@@ -39,6 +44,12 @@ public class FachadaCompUsuario implements FachadaCompUsuarioLocal {
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
 
+    /**
+     * Obtiene una instancia de empleado a través de su NIF/CIF.
+     * @param nifcif Cadena de caracteres que representa el NIF/CIF del usuario.
+     * @return Instancia del empleado.
+     */
+    
     @Override
     public Empleado getEmpleado(String nifcif) {
         Empleado e = null;

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author arome
  */
-@WebServlet(urlPatterns = {"/ServletCompPedido"})
+@WebServlet(name = "ServletCompPedido",urlPatterns = {"/ServletCompPedido"})
 public class ServletCompPedido extends HttpServlet {
     @EJB
     private fachadaCompPedidoLocal fachadaCompPedido;

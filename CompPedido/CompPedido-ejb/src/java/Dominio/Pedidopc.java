@@ -5,6 +5,7 @@
  */
 package Dominio;
 
+import DominioCompCatalogo.Configuracionpc;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;

@@ -5,7 +5,7 @@
  */
 package Persistencia;
 
-import Dominio.Descripcioncomponente;
+import DominioCompCatalogo.Descripcioncomponente;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

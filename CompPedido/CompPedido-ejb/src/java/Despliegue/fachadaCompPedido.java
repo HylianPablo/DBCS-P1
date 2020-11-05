@@ -5,7 +5,7 @@
  */
 package Despliegue;
 
-import Dominio.Configuracionpc;
+import DominioCompCatalogo.Configuracionpc;
 import Dominio.Empresa;
 import Dominio.Estadoventapcs;
 import Dominio.Pedidopc;
@@ -25,6 +25,8 @@ import javax.ejb.Stateless;
 @Stateless
 public class fachadaCompPedido implements fachadaCompPedidoLocal {
     @EJB
+    private DespliegueCompCatalogo.fachadaCompCatalogoRemote fachadaCompCatalogo;
+    @EJB
     private EstadoventapcsFacadeLocal estadoventapcsFacade;
     @EJB
     private ConfiguracionpcFacadeLocal configuracionpcFacade;
@@ -38,19 +40,17 @@ public class fachadaCompPedido implements fachadaCompPedidoLocal {
     
     @Override
     public float importeAbonar(String nifcif) {
-        List<Pedidopc> pedidos = new ArrayList<>();
         float importeTotal = -1.0F;
-        /*
-        int cantidad = 0;
+        Empresa empresa = empresaFacade.find(nifcif);
+        List<Pedidopc> pedidos = pedidopcFacade.getPedidoByEncargadopor(empresa);
         pedidos = pedidopcFacade.findAll();
         for (int i = 0; i<pedidos.size(); i++){
-            if(pedidos.get(i).getEncargadopor().equals(nifcif)){
+            if(pedidos.get(i).getEncargadopor().getNifcif().equals(nifcif)){
                 if(pedidos.get(i).getEstado().getIdestadoventa()==3){
-                    pedidos.get(i).getConfiguracionsolicitada()
-                    cantidad = pedidos.get(i).getCantidadsolicitada();
-                }  
+                    return fachadaCompCatalogo.getPrecioTotal(pedidos.get(i).getConfiguracionsolicitada().getIdconfiguracion()) * pedidos.get(i).getCantidadsolicitada();
+                }
             }
-        }*/
+        }
         return importeTotal;
     }
 

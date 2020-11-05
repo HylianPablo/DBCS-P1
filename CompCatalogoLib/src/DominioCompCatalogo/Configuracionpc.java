@@ -3,30 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Dominio;
+package DominioCompCatalogo;
 
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author arome
+ * @author Propietario
  */
 @Entity
 @Table(name = "CONFIGURACIONPC")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Configuracionpc.findAll", query = "SELECT c FROM Configuracionpc c"),
     @NamedQuery(name = "Configuracionpc.findByIdconfiguracion", query = "SELECT c FROM Configuracionpc c WHERE c.idconfiguracion = :idconfiguracion"),
@@ -39,27 +41,26 @@ public class Configuracionpc implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @NotNull
     @Column(name = "IDCONFIGURACION")
     private Integer idconfiguracion;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "VELOCIDADCPU")
     private int velocidadcpu;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "CAPACIDADRAM")
     private int capacidadram;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "CAPACIDADDD")
     private int capacidaddd;
     @Column(name = "VELOCIDADTARJETAGRAFICA")
     private Integer velocidadtarjetagrafica;
     @Column(name = "MEMORIATARJETAGRAFICA")
     private Integer memoriatarjetagrafica;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "configuracionsolicitada", fetch = FetchType.EAGER)
-    private List<Pedidopc> pedidopcList;
+    @JoinTable(name = "COMPONENTESENCONFIGURACION", joinColumns = {
+        @JoinColumn(name = "IDCONFIGURACION", referencedColumnName = "IDCONFIGURACION")}, inverseJoinColumns = {
+        @JoinColumn(name = "IDDESCRIPCION", referencedColumnName = "IDDESCRIPCION")})
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Descripcioncomponente> descripcioncomponenteList;
     @JoinColumn(name = "TIPOCPU", referencedColumnName = "IDTIPOCPU")
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Cpu tipocpu;
@@ -126,12 +127,13 @@ public class Configuracionpc implements Serializable {
         this.memoriatarjetagrafica = memoriatarjetagrafica;
     }
 
-    public List<Pedidopc> getPedidopcList() {
-        return pedidopcList;
+    @XmlTransient
+    public List<Descripcioncomponente> getDescripcioncomponenteList() {
+        return descripcioncomponenteList;
     }
 
-    public void setPedidopcList(List<Pedidopc> pedidopcList) {
-        this.pedidopcList = pedidopcList;
+    public void setDescripcioncomponenteList(List<Descripcioncomponente> descripcioncomponenteList) {
+        this.descripcioncomponenteList = descripcioncomponenteList;
     }
 
     public Cpu getTipocpu() {

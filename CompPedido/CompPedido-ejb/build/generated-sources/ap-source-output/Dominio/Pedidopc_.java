@@ -1,13 +1,13 @@
 package Dominio;
 
-import Dominio.Configuracionpc;
 import Dominio.Empresa;
 import Dominio.Estadoventapcs;
+import DominioCompCatalogo.Configuracionpc;
 import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2020-11-03T16:21:31")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2020-11-05T14:06:31")
 @StaticMetamodel(Pedidopc.class)
 public class Pedidopc_ { 
 
