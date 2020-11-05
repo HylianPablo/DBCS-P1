@@ -17,7 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Propietario
+ * @author alerome
+ * @author pamarti
  */
 @WebServlet(urlPatterns = {"/ServletCompUsuario"})
 public class ServletCompUsuario extends HttpServlet {

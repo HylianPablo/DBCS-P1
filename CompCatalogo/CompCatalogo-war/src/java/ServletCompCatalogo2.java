@@ -18,12 +18,14 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Propietario
+ * @author alerome
+ * @author pamarti
  */
-@WebServlet(urlPatterns = {"/ServletCompCatalogo2"})
+@WebServlet(name = "ServletCompCatalogo", urlPatterns = {"/ServletCompCatalogo"})
 public class ServletCompCatalogo2 extends HttpServlet {
     @EJB
     private fachadaCompCatalogoRemote fachadaCompCatalogo;
+
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,25 +43,25 @@ public class ServletCompCatalogo2 extends HttpServlet {
         
         List<Integer> descripcion = Arrays.asList(111,888,999,444,555,666);
         Boolean respuestaCreaConfiguracion = false;
-        //try{
-        //respuestaCreaConfiguracion = fachadaCompCatalogo.addConfiguracion(12, 12, 12, 
-        //        12, 12, (short) 1, descripcion);
-        //} catch (Exception e) {
-        //    System.err.println("En servlet");
-        //}
-        //Boolean respuestaCreaConfiguracion_ErrTipoCPU = fachadaCompCatalogo.addConfiguracion(12, 12, 12, 
-        //        12, 12, (short) 8, descripcion);
-        //descripcion.set(2, 0);
-        //Boolean respuestaCreaConfiguracion_ErrDesc = fachadaCompCatalogo.addConfiguracion(12, 12, 12, 
-        //        12, 12, (short) 1, descripcion);
+        try{
+            respuestaCreaConfiguracion = fachadaCompCatalogo.addConfiguracion(12, 12, 12,
+                    12, 12, (short) 1, descripcion);
+        } catch (Exception e) {
+            System.err.println("En servlet");
+        }
+        Boolean respuestaCreaConfiguracion_ErrTipoCPU = fachadaCompCatalogo.addConfiguracion(12, 12, 12, 
+                12, 12, (short) 8, descripcion);
+        descripcion.set(2, 0);
+        Boolean respuestaCreaConfiguracion_ErrDesc = fachadaCompCatalogo.addConfiguracion(12, 12, 12, 
+                12, 12, (short) 1, descripcion);
         
-        //Boolean respuestaEditConfiguracion_editValor = fachadaCompCatalogo.editConfiguracion(2222, 4, 0, 0, 4, 0, (short) 0);
-        //Boolean respuestaEditConfiguracion_editCpu = fachadaCompCatalogo.editConfiguracion(3333, 0, 0, 0, 0, 0, (short) 2);
-        //Boolean respuestaEditConfiguracion_ErrIdConf = fachadaCompCatalogo.editConfiguracion(8888, 4, 0, 0, 4, 0, (short) 0);
-        //Boolean respuestaEditConfiguracion_ErrIdCPU = fachadaCompCatalogo.editConfiguracion(2222, 0, 0, 0, 0, 0, (short) 8);
+        Boolean respuestaEditConfiguracion_editValor = fachadaCompCatalogo.editConfiguracion(2222, 4, 0, 0, 4, 0, (short) 0);
+        Boolean respuestaEditConfiguracion_editCpu = fachadaCompCatalogo.editConfiguracion(3333, 0, 0, 0, 0, 0, (short) 2);
+        Boolean respuestaEditConfiguracion_ErrIdConf = fachadaCompCatalogo.editConfiguracion(8888, 4, 0, 0, 4, 0, (short) 0);
+        Boolean respuestaEditConfiguracion_ErrIdCPU = fachadaCompCatalogo.editConfiguracion(2222, 0, 0, 0, 0, 0, (short) 8);
         
-        //float precio_Err = fachadaCompCatalogo.getPrecioTotal(8888);
-        //float precio_NoErr = fachadaCompCatalogo.getPrecioTotal(1111);
+        float precio_Err = fachadaCompCatalogo.getPrecioTotal(8888);
+        float precio_NoErr = fachadaCompCatalogo.getPrecioTotal(1111);
         
 
         response.setContentType("text/html;charset=UTF-8");
@@ -84,16 +86,16 @@ public class ServletCompCatalogo2 extends HttpServlet {
             }
             out.println("<h2> *** Operacion addConfiguracion:");
             out.println("<p> Operacion exitosa. Respuesta: " + respuestaCreaConfiguracion + "</p>");
-            //out.println("<p> Operacion error en tipo CPU. Respuesta: " + respuestaCreaConfiguracion_ErrTipoCPU + "</p>");
-            //out.println("<p> Operacion error en descripcion. Respuesta: " + respuestaCreaConfiguracion_ErrDesc + "</p>");
+            out.println("<p> Operacion error en tipo CPU. Respuesta: " + respuestaCreaConfiguracion_ErrTipoCPU + "</p>");
+            out.println("<p> Operacion error en descripcion. Respuesta: " + respuestaCreaConfiguracion_ErrDesc + "</p>");
             out.println("<h2> *** Operacion editConfiguracion:");
-            //out.println("<p> Operacion exitosa cambio valor. Respuesta: " + respuestaEditConfiguracion_editValor + "</p>");
-            //out.println("<p> Operacion exitosa cambio CPU. Respuesta: " + respuestaEditConfiguracion_editCpu + "</p>");
-            //out.println("<p> Operacion error en tipo CPU. Respuesta: " + respuestaEditConfiguracion_ErrIdCPU + "</p>");
-            //out.println("<p> Operacion error en id conf. Respuesta: " + respuestaEditConfiguracion_ErrIdConf + "</p>");
+            out.println("<p> Operacion exitosa cambio valor. Respuesta: " + respuestaEditConfiguracion_editValor + "</p>");
+            out.println("<p> Operacion exitosa cambio CPU. Respuesta: " + respuestaEditConfiguracion_editCpu + "</p>");
+            out.println("<p> Operacion error en tipo CPU. Respuesta: " + respuestaEditConfiguracion_ErrIdCPU + "</p>");
+            out.println("<p> Operacion error en id conf. Respuesta: " + respuestaEditConfiguracion_ErrIdConf + "</p>");
             out.println("<h2> *** Operacion getPrecio:");
-            //out.println("<p> Operacion con error. Respuesta: " + precio_Err + "</p>");
-            //out.println("<p> Operacion exitosa. Precio conf 1111: " + precio_NoErr + "</p>");
+            out.println("<p> Operacion con error. Respuesta: " + precio_Err + "</p>");
+            out.println("<p> Operacion exitosa. Precio conf 1111: " + precio_NoErr + "</p>");
             out.println("</body>");
             out.println("</html>");
         }

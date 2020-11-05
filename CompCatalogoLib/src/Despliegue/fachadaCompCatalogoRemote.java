@@ -5,17 +5,23 @@
  */
 package Despliegue;
 
-import Dominio.Configuracionpc;
 import java.util.List;
 import javax.ejb.Remote;
 
 /**
  *
- * @author Propietario
+ * @author alerome
+ * @auhtor pamarti
  */
 @Remote
 public interface fachadaCompCatalogoRemote {
 
-    List<Configuracionpc> getCatalogo();
+    List<Dominio.Configuracionpc> getCatalogo();
+
+    Boolean addConfiguracion(int velCPU, int capRAM, int capDD, int velTarGraf, int memTarGraf, short idTipoCPU, List<Integer> idsDescrComp);
+    
+    Boolean editConfiguracion(int IdConfiguracion, int velCPU, int capRAM, int capDD, int velTarGraf,int memTarGraf, short idTipoCPU);
+
+    float getPrecioTotal(int idConfiguracion);
     
 }
