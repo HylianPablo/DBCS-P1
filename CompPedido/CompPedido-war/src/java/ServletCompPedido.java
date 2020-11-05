@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ServletCompPedido extends HttpServlet {
     @EJB
     private fachadaCompPedidoLocal fachadaCompPedido;
+
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

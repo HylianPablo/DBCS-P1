@@ -19,13 +19,16 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author arome
+ * @author Propietario
  */
 @Entity
 @Table(name = "ESTADOVENTAPCS")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Estadoventapcs.findAll", query = "SELECT e FROM Estadoventapcs e"),
     @NamedQuery(name = "Estadoventapcs.findByIdestadoventa", query = "SELECT e FROM Estadoventapcs e WHERE e.idestadoventa = :idestadoventa"),
@@ -73,6 +76,7 @@ public class Estadoventapcs implements Serializable {
         this.nombreestadoventa = nombreestadoventa;
     }
 
+    @XmlTransient
     public List<Pedidopc> getPedidopcList() {
         return pedidopcList;
     }

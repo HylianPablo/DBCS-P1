@@ -5,14 +5,13 @@
  */
 package Persistencia;
 
-import Dominio.Empresa;
 import Dominio.Pedidopc;
 import java.util.List;
 import javax.ejb.Local;
 
 /**
  *
- * @author arome
+ * @author Propietario
  */
 @Local
 public interface PedidopcFacadeLocal {
@@ -31,6 +30,6 @@ public interface PedidopcFacadeLocal {
 
     int count();
     
-    List<Pedidopc> getPedidoByEncargadopor(Empresa empresa);
+    List<Pedidopc> getPedidoByEncargadopor(String empresa);
     
 }

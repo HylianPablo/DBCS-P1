@@ -5,10 +5,9 @@
  */
 package Despliegue;
 
-import DespliegueCompCatalogo.fachadaCompCatalogoRemote;
-import DominioCompCatalogo.Configuracionpc;
-import DominioCompCatalogo.Cpu;
-import DominioCompCatalogo.Descripcioncomponente;
+import Dominio.Configuracionpc;
+import Dominio.Cpu;
+import Dominio.Descripcioncomponente;
 import Persistencia.ConfiguracionpcFacadeLocal;
 import Persistencia.CpuFacadeLocal;
 import Persistencia.DescripcioncomponenteFacadeLocal;
@@ -149,15 +148,15 @@ public class fachadaCompCatalogo implements fachadaCompCatalogoRemote {
     @Override
     public float getPrecioTotal(int idConfiguracion) {
         float precioTotal;
-        precioTotal = -1.0f;
+        precioTotal = 0.0f;
         Configuracionpc cf = configuracionpcFacade.find(idConfiguracion);
         /* En caso de que la configuracion de ordenador no exista, se retorna directamente false */
         if(cf==null){
-            return precioTotal;
+            return -1.0f;
         }
         List<Descripcioncomponente> listaComps = cf.getDescripcioncomponenteList();
         if(listaComps.isEmpty()){
-            return precioTotal;
+            return -1.0f;
         }
         for (Descripcioncomponente listaComp : listaComps) {
             precioTotal += listaComp.getPrecio();                   

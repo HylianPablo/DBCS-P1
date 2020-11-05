@@ -5,50 +5,43 @@
  */
 package Despliegue;
 
-import DominioCompCatalogo.Configuracionpc;
-import Dominio.Empresa;
 import Dominio.Estadoventapcs;
 import Dominio.Pedidopc;
-import Persistencia.ConfiguracionpcFacadeLocal;
-import Persistencia.EmpresaFacadeLocal;
+import Dominio.Configuracionpc;
 import Persistencia.EstadoventapcsFacadeLocal;
 import Persistencia.PedidopcFacadeLocal;
-import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 /**
  *
- * @author arome
+ * @author Propietario
  */
 @Stateless
 public class fachadaCompPedido implements fachadaCompPedidoLocal {
     @EJB
-    private DespliegueCompCatalogo.fachadaCompCatalogoRemote fachadaCompCatalogo;
+    private PedidopcFacadeLocal pedidopcFacade;
     @EJB
     private EstadoventapcsFacadeLocal estadoventapcsFacade;
     @EJB
-    private ConfiguracionpcFacadeLocal configuracionpcFacade;
-    @EJB
-    private EmpresaFacadeLocal empresaFacade;
-    @EJB
-    private PedidopcFacadeLocal pedidopcFacade;
-    
+    private fachadaCompCatalogoRemote fachadaCompCatalogo;
+
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
-    
+
     @Override
     public float importeAbonar(String nifcif) {
-        float importeTotal = -1.0F;
-        Empresa empresa = empresaFacade.find(nifcif);
-        List<Pedidopc> pedidos = pedidopcFacade.getPedidoByEncargadopor(empresa);
-        pedidos = pedidopcFacade.findAll();
-        for (int i = 0; i<pedidos.size(); i++){
-            if(pedidos.get(i).getEncargadopor().getNifcif().equals(nifcif)){
-                if(pedidos.get(i).getEstado().getIdestadoventa()==3){
-                    return fachadaCompCatalogo.getPrecioTotal(pedidos.get(i).getConfiguracionsolicitada().getIdconfiguracion()) * pedidos.get(i).getCantidadsolicitada();
-                }
+        
+        float importeTotal = 0.0F;
+        List<Pedidopc> pedidosEmpresa = pedidopcFacade.getPedidoByEncargadopor(nifcif);
+        if(pedidosEmpresa==null || pedidosEmpresa.isEmpty()){
+            return -1.0f;
+        }
+        for (Pedidopc pedidosEmpresa1 : pedidosEmpresa) {
+            if (pedidosEmpresa1.getEstado().getIdestadoventa() == 3) {
+                int confPedido = pedidosEmpresa1.getConfiguracionsolicitada();
+                importeTotal+=(fachadaCompCatalogo.getPrecioTotal(confPedido)*pedidosEmpresa1.getCantidadsolicitada());
             }
         }
         return importeTotal;
@@ -56,21 +49,18 @@ public class fachadaCompPedido implements fachadaCompPedidoLocal {
 
     @Override
     public boolean addPedido(int cantidad, int idConfiguracion, String nifcif) {
-        Pedidopc p = new Pedidopc(53,cantidad);
-        Configuracionpc conf = configuracionpcFacade.find(idConfiguracion);
-        if(conf==null){
+        Pedidopc pedido = new Pedidopc(53);
+        float precioConfiguracion = fachadaCompCatalogo.getPrecioTotal(idConfiguracion);
+        if(precioConfiguracion==-1.0f){
             return false;
         }
-        Empresa emp = empresaFacade.find(nifcif);
-        if(emp==null){
-            return false;
-        }
+        pedido.setCantidadsolicitada(cantidad);
+        pedido.setEncargadopor(nifcif);
+        pedido.setConfiguracionsolicitada(idConfiguracion);
         Estadoventapcs estado = estadoventapcsFacade.find((short)1);
-        p.setEstado(estado);
-        p.setEncargadopor(emp);
-        p.setConfiguracionsolicitada(conf);
+        pedido.setEstado(estado);
         try{
-            pedidopcFacade.create(p);
+            pedidopcFacade.create(pedido);
         }catch(Exception ex){
             System.err.println(ex.getMessage());
             return false;
@@ -80,22 +70,16 @@ public class fachadaCompPedido implements fachadaCompPedidoLocal {
 
     @Override
     public boolean delPedido(int idConfiguracion, String nifcif) {
-        Empresa empresa = empresaFacade.find(nifcif);
-        if(empresa==null){
-            return false;
-        }
-        List<Pedidopc> pedidosUsuario = pedidopcFacade.getPedidoByEncargadopor(empresa);
+        List<Pedidopc> pedidosUsuario = pedidopcFacade.getPedidoByEncargadopor(nifcif);
         if(pedidosUsuario==null || pedidosUsuario.isEmpty()){
             return false;
         }
-        for(int i=0;i<pedidosUsuario.size();i++){
-            if(pedidosUsuario.get(i).getConfiguracionsolicitada().getIdconfiguracion()==idConfiguracion){
-                pedidopcFacade.remove(pedidosUsuario.get(i));
+        for (Pedidopc pedidosUsuario1 : pedidosUsuario) {
+            if (pedidosUsuario1.getConfiguracionsolicitada() == idConfiguracion) {
+                pedidopcFacade.remove(pedidosUsuario1);
                 return true;
             }
         }
         return false;
     }
-    
-    
 }

@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import DespliegueCompCatalogo.fachadaCompCatalogoRemote;
-import DominioCompCatalogo.Configuracionpc;
+import Despliegue.fachadaCompCatalogoRemote;
+import Dominio.Configuracionpc;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;

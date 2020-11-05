@@ -5,7 +5,6 @@
  */
 package Dominio;
 
-import DominioCompCatalogo.Configuracionpc;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -18,18 +17,22 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author arome
+ * @author Propietario
  */
 @Entity
 @Table(name = "PEDIDOPC")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Pedidopc.findAll", query = "SELECT p FROM Pedidopc p"),
     @NamedQuery(name = "Pedidopc.findByIdpedido", query = "SELECT p FROM Pedidopc p WHERE p.idpedido = :idpedido"),
     @NamedQuery(name = "Pedidopc.findByCantidadsolicitada", query = "SELECT p FROM Pedidopc p WHERE p.cantidadsolicitada = :cantidadsolicitada"),
-    @NamedQuery(name = "Pedidopc.findByEncargador", query = "SELECT p FROM Pedidopc p WHERE p.encargadopor = ?1")})
+    @NamedQuery(name = "Pedidopc.findByConfiguracionsolicitada", query = "SELECT p FROM Pedidopc p WHERE p.configuracionsolicitada = :configuracionsolicitada"),
+    @NamedQuery(name = "Pedidopc.findByEncargadopor", query = "SELECT p FROM Pedidopc p WHERE p.encargadopor = ?1")})
 public class Pedidopc implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -41,12 +44,15 @@ public class Pedidopc implements Serializable {
     @NotNull
     @Column(name = "CANTIDADSOLICITADA")
     private int cantidadsolicitada;
-    @JoinColumn(name = "CONFIGURACIONSOLICITADA", referencedColumnName = "IDCONFIGURACION")
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
-    private Configuracionpc configuracionsolicitada;
-    @JoinColumn(name = "ENCARGADOPOR", referencedColumnName = "NIFCIF")
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
-    private Empresa encargadopor;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "CONFIGURACIONSOLICITADA")
+    private int configuracionsolicitada;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 9)
+    @Column(name = "ENCARGADOPOR")
+    private String encargadopor;
     @JoinColumn(name = "ESTADO", referencedColumnName = "IDESTADOVENTA")
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Estadoventapcs estado;
@@ -58,9 +64,11 @@ public class Pedidopc implements Serializable {
         this.idpedido = idpedido;
     }
 
-    public Pedidopc(Integer idpedido, int cantidadsolicitada) {
+    public Pedidopc(Integer idpedido, int cantidadsolicitada, int configuracionsolicitada, String encargadopor) {
         this.idpedido = idpedido;
         this.cantidadsolicitada = cantidadsolicitada;
+        this.configuracionsolicitada = configuracionsolicitada;
+        this.encargadopor = encargadopor;
     }
 
     public Integer getIdpedido() {
@@ -79,19 +87,19 @@ public class Pedidopc implements Serializable {
         this.cantidadsolicitada = cantidadsolicitada;
     }
 
-    public Configuracionpc getConfiguracionsolicitada() {
+    public int getConfiguracionsolicitada() {
         return configuracionsolicitada;
     }
 
-    public void setConfiguracionsolicitada(Configuracionpc configuracionsolicitada) {
+    public void setConfiguracionsolicitada(int configuracionsolicitada) {
         this.configuracionsolicitada = configuracionsolicitada;
     }
 
-    public Empresa getEncargadopor() {
+    public String getEncargadopor() {
         return encargadopor;
     }
 
-    public void setEncargadopor(Empresa encargadopor) {
+    public void setEncargadopor(String encargadopor) {
         this.encargadopor = encargadopor;
     }
 

@@ -5,7 +5,7 @@
  */
 package Persistencia;
 
-import DominioCompCatalogo.Descripcioncomponente;
+import Dominio.Descripcioncomponente;
 import java.util.List;
 import javax.ejb.Local;
 

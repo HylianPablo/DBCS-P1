@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DespliegueCompCatalogo;
+package Despliegue;
 
 import java.util.List;
 import javax.ejb.Remote;
@@ -15,7 +15,7 @@ import javax.ejb.Remote;
 @Remote
 public interface fachadaCompCatalogoRemote {
 
-    List<DominioCompCatalogo.Configuracionpc> getCatalogo();
+    List<Dominio.Configuracionpc> getCatalogo();
 
     Boolean addConfiguracion(int velCPU, int capRAM, int capDD, int velTarGraf, int memTarGraf, short idTipoCPU, List<Integer> idsDescrComp);
     
