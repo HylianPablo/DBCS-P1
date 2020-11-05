@@ -79,12 +79,15 @@ public class fachadaCompCatalogo implements fachadaCompCatalogoRemote {
         Configuracionpc cf = configuracionpcFacade.find(IdConfiguracion);
         if(cf==null){
             return false;
+        }  
+        short zero = 0;
+        if(idTipoCPU!=zero){
+            Cpu c = cpuFacade.find(idTipoCPU);          
+            if(c==null){
+                return false;
+            }
+            cf.setTipocpu(c);
         }
-        Cpu c = cpuFacade.find(idTipoCPU);          
-        if(c==null){
-            return false;
-        }
-        cf.setTipocpu(c);
         cf.setMemoriatarjetagrafica(memTarGraf);
         cf.setVelocidadcpu(velCPU);
         cf.setCapacidadram(capRAM);

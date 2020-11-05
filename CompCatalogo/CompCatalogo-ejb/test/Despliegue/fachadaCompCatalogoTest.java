@@ -54,7 +54,7 @@ public class fachadaCompCatalogoTest {
         //EJBContainer container = javax.ejb.embeddable.EJBContainer.createEJBContainer();
         fachadaCompCatalogoRemote instance = (fachadaCompCatalogoRemote)container.getContext().lookup("java:global/classes/fachadaCompCatalogo");
         List<Configuracionpc> result = instance.getCatalogo();
-        int expResult = 3;
+        int expResult = 1;
         assertEquals(expResult, result.get(0).getVelocidadcpu());  // velocidad CPU
         String expResult2 = "AMD"; // Tipo CPU
         assertEquals(expResult2, result.get(0).getTipocpu().getNombretipocpu());

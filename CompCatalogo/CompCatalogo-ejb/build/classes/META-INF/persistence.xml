@@ -8,10 +8,6 @@
     <class>Dominio.Tipocomponente</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-        <property name="javax.persitance.jdbc.url" value="jdbc:derby://localhost:1527/p1dbcs"/>
-        <property name="javax.persitance.jdbc.user" value="usuario"/>
-        <property name="javax.persitance.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-        <property name="javax.persitance.jdbc.password" value="password"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>
