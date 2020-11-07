@@ -13,7 +13,8 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Propietario
+ * @author alerome
+ * @author pamarti
  */
 @Stateless
 public class PedidopcFacade extends AbstractFacade<Pedidopc> implements PedidopcFacadeLocal {
@@ -29,6 +30,11 @@ public class PedidopcFacade extends AbstractFacade<Pedidopc> implements Pedidopc
         super(Pedidopc.class);
     }
     
+    /**
+     * Obtiene una lista de los pedidos encargados por una empresa a través de una NamedQuery.
+     * @param empresa Cadena de caracteres que representa el NIF/CIF de la empresa.
+     * @return Lista con los pedidos de ordenadores asociados a la empresa.
+     */
     @Override
     public List<Pedidopc> getPedidoByEncargadopor(String empresa){
         return em.createNamedQuery("Pedidopc.findByEncargadopor").setParameter(1,empresa).getResultList();

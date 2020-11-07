@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="PABLO" name="Despliegue.FachadaCompUsuarioTest" skipped="0" tests="5" time="15.675" timestamp="2020-11-05T18:20:08">
+<testsuite errors="0" failures="0" hostname="PABLO" name="Despliegue.FachadaCompUsuarioTest" skipped="0" tests="5" time="15.294" timestamp="2020-11-07T17:53:48">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="ES" />
@@ -55,7 +55,7 @@
     <property name="libs.Comet-GlassFish-v3.javadoc" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Despliegue.FachadaCompUsuarioTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Propietario\Documents\UNIVERSIDAD\4-CUARTO INF\DBCS\P1\PRACTICA1\CompUsuario\CompUsuario-ejb\build\test\results\TEST-Despliegue.FachadaCompUsuarioTest.xml crashfile=C:\Users\Propietario\Documents\UNIVERSIDAD\4-CUARTO INF\DBCS\P1\PRACTICA1\CompUsuario\CompUsuario-ejb\build\junitvmwatcher3470467153689194931.properties propsfile=C:\Users\Propietario\Documents\UNIVERSIDAD\4-CUARTO INF\DBCS\P1\PRACTICA1\CompUsuario\CompUsuario-ejb\build\junit8293804736701054851.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Despliegue.FachadaCompUsuarioTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Propietario\Documents\UNIVERSIDAD\4-CUARTO INF\DBCS\P1\PRACTICA1\CompUsuario\CompUsuario-ejb\build\test\results\TEST-Despliegue.FachadaCompUsuarioTest.xml crashfile=C:\Users\Propietario\Documents\UNIVERSIDAD\4-CUARTO INF\DBCS\P1\PRACTICA1\CompUsuario\CompUsuario-ejb\build\junitvmwatcher2013518873047564445.properties propsfile=C:\Users\Propietario\Documents\UNIVERSIDAD\4-CUARTO INF\DBCS\P1\PRACTICA1\CompUsuario\CompUsuario-ejb\build\junit4278559101633412828.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="ap.supported.internal" value="true" />
@@ -394,11 +394,11 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.0.1\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="Despliegue.FachadaCompUsuarioTest" name="testGetEmpleado_NoNULL_rol" time="0.102" />
-  <testcase classname="Despliegue.FachadaCompUsuarioTest" name="testGetEmpleado_NoNULL_password" time="0.006" />
-  <testcase classname="Despliegue.FachadaCompUsuarioTest" name="testGetEmpresa_NULL" time="0.003" />
-  <testcase classname="Despliegue.FachadaCompUsuarioTest" name="testGetEmpresa_NoNULL" time="0.005" />
-  <testcase classname="Despliegue.FachadaCompUsuarioTest" name="testGetEmpleado_NULL" time="0.002" />
+  <testcase classname="Despliegue.FachadaCompUsuarioTest" name="testGetEmpleado_NoNULL_rol" time="0.106" />
+  <testcase classname="Despliegue.FachadaCompUsuarioTest" name="testGetEmpleado_NoNULL_password" time="0.007" />
+  <testcase classname="Despliegue.FachadaCompUsuarioTest" name="testGetEmpresa_NULL" time="0.004" />
+  <testcase classname="Despliegue.FachadaCompUsuarioTest" name="testGetEmpresa_NoNULL" time="0.006" />
+  <testcase classname="Despliegue.FachadaCompUsuarioTest" name="testGetEmpleado_NULL" time="0.001" />
   <system-out><![CDATA[Found populator: org.glassfish.kernel.embedded.EmbeddedDomainXml
 JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource]
 getEmpleado: existe y es GerenteVentas
@@ -410,135 +410,135 @@ PlainTextActionReporterSUCCESSNo monitoring data to report.
 JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource]
 JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource]
 ]]></system-out>
-  <system-err><![CDATA[nov 05, 2020 7:20:08 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl createContainer
+  <system-err><![CDATA[nov 07, 2020 6:53:48 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl createContainer
 INFORMACIÓN: [EJBContainerProviderImpl] Using installation location E:\glassfish4\glassfish
-nov 05, 2020 7:20:08 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl createContainer
-INFORMACIÓN: [EJBContainerProviderImpl] Using config file location: file:/C:/Users/PROPIE~1/AppData/Local/Temp/domain2984275163494369091xml
-nov 05, 2020 7:20:08 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl createContainer
+nov 07, 2020 6:53:48 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl createContainer
+INFORMACIÓN: [EJBContainerProviderImpl] Using config file location: file:/C:/Users/PROPIE~1/AppData/Local/Temp/domain1456755660790267567xml
+nov 07, 2020 6:53:48 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl createContainer
 INFORMACIÓN: [EJBContainerProviderImpl] Using runtime class: class com.sun.enterprise.glassfish.bootstrap.StaticGlassFishRuntime
-nov 05, 2020 7:20:09 PM com.sun.enterprise.v3.server.CommonClassLoaderServiceImpl findDerbyClient
+nov 07, 2020 6:53:49 PM com.sun.enterprise.v3.server.CommonClassLoaderServiceImpl findDerbyClient
 INFORMACIÓN: Cannot find javadb client jar file, derby jdbc driver will not be available by default.
-nov 05, 2020 7:20:09 PM org.hibernate.validator.internal.util.Version <clinit>
+nov 07, 2020 6:53:49 PM org.hibernate.validator.internal.util.Version <clinit>
 INFO: HV000001: Hibernate Validator 5.0.0.Final
-nov 05, 2020 7:20:09 PM org.glassfish.security.services.impl.authorization.AuthorizationServiceImpl initialize
+nov 07, 2020 6:53:49 PM org.glassfish.security.services.impl.authorization.AuthorizationServiceImpl initialize
 INFORMACIÓN: Authorization Service has successfully initialized.
-nov 05, 2020 7:20:09 PM com.sun.enterprise.security.auth.realm.Realm doInstantiate
+nov 07, 2020 6:53:49 PM com.sun.enterprise.security.auth.realm.Realm doInstantiate
 INFORMACIÓN: Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.
-nov 05, 2020 7:20:09 PM com.sun.enterprise.security.auth.realm.Realm doInstantiate
+nov 07, 2020 6:53:49 PM com.sun.enterprise.security.auth.realm.Realm doInstantiate
 INFORMACIÓN: Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.
-nov 05, 2020 7:20:09 PM com.sun.enterprise.security.auth.realm.Realm doInstantiate
+nov 07, 2020 6:53:49 PM com.sun.enterprise.security.auth.realm.Realm doInstantiate
 INFORMACIÓN: Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.
-nov 05, 2020 7:20:09 PM org.glassfish.ha.store.spi.BackingStoreFactoryRegistry register
+nov 07, 2020 6:53:49 PM org.glassfish.ha.store.spi.BackingStoreFactoryRegistry register
 INFORMACIÓN: Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry
-nov 05, 2020 7:20:09 PM com.sun.enterprise.v3.server.AppServerStartup postStartupJob
-INFORMACIÓN: GlassFish Server Open Source Edition  4.1  (13) startup time : Embedded (524ms), startup services(590ms), total(1.114ms)
-nov 05, 2020 7:20:10 PM org.glassfish.admin.mbeanserver.JMXStartupService$JMXConnectorsStarterThread run
+nov 07, 2020 6:53:49 PM com.sun.enterprise.v3.server.AppServerStartup postStartupJob
+INFORMACIÓN: GlassFish Server Open Source Edition  4.1  (13) startup time : Embedded (496ms), startup services(536ms), total(1.032ms)
+nov 07, 2020 6:53:49 PM org.glassfish.admin.mbeanserver.JMXStartupService$JMXConnectorsStarterThread run
 INFORMACIÓN: JMXStartupService has disabled JMXConnector system
-nov 05, 2020 7:20:10 PM org.glassfish.admin.mbeanserver.JMXStartupService shutdown
+nov 07, 2020 6:53:49 PM org.glassfish.admin.mbeanserver.JMXStartupService shutdown
 INFORMACIÓN: JMXStartupService and JMXConnectors have been shut down.
-nov 05, 2020 7:20:10 PM com.sun.enterprise.v3.server.AppServerStartup stop
+nov 07, 2020 6:53:49 PM com.sun.enterprise.v3.server.AppServerStartup stop
 INFORMACIÓN: Shutdown procedure finished
-nov 05, 2020 7:20:10 PM org.glassfish.ha.store.spi.BackingStoreFactoryRegistry register
+nov 07, 2020 6:53:49 PM org.glassfish.ha.store.spi.BackingStoreFactoryRegistry register
 INFORMACIÓN: Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry
-nov 05, 2020 7:20:10 PM com.sun.enterprise.v3.server.AppServerStartup postStartupJob
-INFORMACIÓN: GlassFish Server Open Source Edition  4.1  (13) startup time : Embedded (1.417ms), startup services(15ms), total(1.432ms)
-nov 05, 2020 7:20:10 PM org.glassfish.admin.mbeanserver.JMXStartupService$JMXConnectorsStarterThread run
+nov 07, 2020 6:53:49 PM com.sun.enterprise.v3.server.AppServerStartup postStartupJob
+INFORMACIÓN: GlassFish Server Open Source Edition  4.1  (13) startup time : Embedded (1.313ms), startup services(13ms), total(1.326ms)
+nov 07, 2020 6:53:49 PM org.glassfish.admin.mbeanserver.JMXStartupService$JMXConnectorsStarterThread run
 INFORMACIÓN: JMXStartupService has disabled JMXConnector system
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping entry with a Manifest file with a special attribute: webservices-api-osgi.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: bean-validator.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.batch-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.ejb-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.el.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.enterprise.concurrent-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.enterprise.concurrent.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.enterprise.deploy-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.faces.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.inject.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.interceptor-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.jms-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.json.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.mail.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.management.j2ee-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.persistence.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.resource-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.security.auth.message-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.security.jacc-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.servlet-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.servlet.jsp-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.servlet.jsp.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.servlet.jsp.jstl-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.servlet.jsp.jstl.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.transaction-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.websocket-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.ws.rs-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.xml.registry-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:49 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: javax.xml.rpc-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: jaxb-osgi.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: webservices-osgi.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping module: weld-osgi-bundle.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
 INFORMACIÓN: ... skipping entry with a Manifest file with a special attribute: glassfish-embedded-static-shell.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
 INFORMACIÓN: [DeploymentElement] adding EJB module to ScatteredArchive classes
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
 INFORMACIÓN: [DeploymentElement] adding library to ScatteredArchive ant.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
 INFORMACIÓN: [DeploymentElement] adding library to ScatteredArchive ant-junit.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
 INFORMACIÓN: [DeploymentElement] adding library to ScatteredArchive junit-4.13.1.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
 INFORMACIÓN: [DeploymentElement] adding library to ScatteredArchive hamcrest-core-1.3.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
 INFORMACIÓN: [DeploymentElement] adding library to ScatteredArchive classes
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
 INFORMACIÓN: [DeploymentElement] adding library to ScatteredArchive jaxb-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
 INFORMACIÓN: [DeploymentElement] adding library to ScatteredArchive javax.annotation-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
 INFORMACIÓN: [DeploymentElement] adding library to ScatteredArchive ant-junit4.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
 INFORMACIÓN: [DeploymentElement] adding library to ScatteredArchive jaxm-api.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
 INFORMACIÓN: [DeploymentElement] adding library to ScatteredArchive ant-launcher.jar
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerImpl deploy
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.EJBContainerImpl deploy
 INFORMACIÓN: [EJBContainerImpl] Deploying app: org.glassfish.embeddable.archive.ScatteredArchive@423ed3b5
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerImpl deploy
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.EJBContainerImpl deploy
 INFORMACIÓN: [EJBContainerImpl] GlassFish status: STARTED
-nov 05, 2020 7:20:10 PM org.glassfish.ejb.embedded.EJBContainerImpl deploy
+nov 07, 2020 6:53:50 PM org.glassfish.ejb.embedded.EJBContainerImpl deploy
 INFORMACIÓN: [EJBContainerImpl] Deploying as a ScatteredArchive
-nov 05, 2020 7:20:13 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -576,7 +576,7 @@ KeyIdentifier [
 0070: 04 90 F3 2C C5 FA E4 A2   DC 16 17 4A 02 A7 ED 94  ...,.......J....
 
 ]
-nov 05, 2020 7:20:13 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -634,7 +634,7 @@ KeyIdentifier [
 0070: B5 62 A6 A6 3D BD 7F 92   59 CD 5A 2A 82 B2 37 79  .b..=...Y.Z*..7y
 
 ]
-nov 05, 2020 7:20:13 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -706,7 +706,7 @@ KeyIdentifier [
 00F0: AE 28 5B A7 F0 F3 36 17   FC C3 05 D3 CA 03 4A 54  .([...6.......JT
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -744,7 +744,7 @@ KeyIdentifier [
 0070: 31 D7 BA 7F D7 96 7C BC   18 6F F1 EB 3E 2C A2 97  1........o..>,..
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -818,7 +818,7 @@ KeyIdentifier [
 00F0: F9 D4 3B 5E 70 12 7F 10   32 9C 1E BB 9D F8 66 A8  ..;^p...2.....f.
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -886,7 +886,7 @@ KeyIdentifier [
 00F0: 40 FD C4 E4 35 E1 1D 16   1C D0 BC 2B 8E D6 71 D9  @...5......+..q.
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -959,7 +959,7 @@ KeyIdentifier [
 0070: FC EF 29 68 A9 A2 87 79   EF 79 EF 4F AC 07 77 38  ..)h...y.y.O..w8
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V1
@@ -988,7 +988,7 @@ GRAVE: The SSL certificate has expired: [
 0070: 13 DA 22 CC ED 71 82 2B   99 CF 3A B7 F5 2D 72 C8  .."..q.+..:..-r.
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -1046,7 +1046,7 @@ KeyIdentifier [
 0070: DC 95 10 1E BE CB C8 3B   5A 84 60 19 56 94 A9 55  .......;Z.`.V..U
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -1104,7 +1104,7 @@ KeyIdentifier [
 00F0: 39 63 28 86 92 F3 18 84   D8 FB D1 CF 05 56 64 57  9c(..........VdW
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -1177,7 +1177,7 @@ KeyIdentifier [
 00F0: C1 71 05 20 00 78 BD 13   52 1D A8 3E CD 00 1F C8  .q. .x..R..>....
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -1245,7 +1245,7 @@ KeyIdentifier [
 00F0: A1 D5 2E 0D B1 1A 45 B4   BC 12 ED 28 17 E9 1E 02  ......E....(....
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -1318,7 +1318,7 @@ KeyIdentifier [
 00F0: C6 57 F4 C9 55 39 78 BA   2C 79 C9 A6 88 2B F4 08  .W..U9x.,y...+..
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V1
@@ -1347,7 +1347,7 @@ GRAVE: The SSL certificate has expired: [
 0070: AE 4F 1F 22 B5 CD 95 AD   BA A7 CC F9 AB 0B 7A 7F  .O."..........z.
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -1417,7 +1417,7 @@ KeyIdentifier [
 00F0: 18 D5 16 E9 B1 D6 B6 10   D5 BB 97 BF A2 8E B4 54  ...............T
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V1
@@ -1446,7 +1446,7 @@ GRAVE: The SSL certificate has expired: [
 0070: 3C E6 16 68 F8 BE ED 74   4C BC 5B D5 62 1F 43 DD  <..h...tL.[.b.C.
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -1514,7 +1514,7 @@ KeyIdentifier [
 00F0: 37 7F 83 AE 9E 77 CF F0   30 B1 FF 4B 99 E8 C6 A1  7....w..0..K....
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -1586,7 +1586,7 @@ KeyIdentifier [
 00F0: 66 EE 9A 25 71 34 6C 50   F1 B2 51 CB 66 9D 4D 29  f..%q4lP..Q.f.M)
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -1654,7 +1654,7 @@ KeyIdentifier [
 00F0: 1E 55 92 94 D8 82 17 5A   7B D0 BC C7 8F 4E 86 04  .U.....Z.....N..
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -1720,7 +1720,7 @@ KeyIdentifier [
 00F0: BD 4C 45 9E 61 BA BF 84   81 92 03 D1 D2 69 7C C5  .LE.a........i..
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -1758,7 +1758,7 @@ KeyIdentifier [
 0070: 4F 51 BB 68 F7 7E 03 C0   BA 01 36 1E 5D 46 44 A5  OQ.h......6.]FD.
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.ssl.impl.SecuritySupportImpl checkCertificateDates
 GRAVE: The SSL certificate has expired: [
 [
   Version: V3
@@ -1839,55 +1839,55 @@ KeyIdentifier [
 0070: 05 F9 52 3E 6D 2D 45 0B   F7 0A 93 EA ED 06 F9 B2  ..R>m-E.........
 
 ]
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.SecurityLifecycle <init>
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.SecurityLifecycle <init>
 INFORMACIÓN: Java security manager is disabled.
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.SecurityLifecycle onInitialization
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.SecurityLifecycle onInitialization
 INFORMACIÓN: Entering Security Startup Service.
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.PolicyLoader loadPolicy
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.PolicyLoader loadPolicy
 INFORMACIÓN: Loading policy provider com.sun.enterprise.security.provider.PolicyWrapper.
-nov 05, 2020 7:20:14 PM com.sun.enterprise.security.SecurityLifecycle onInitialization
+nov 07, 2020 6:53:53 PM com.sun.enterprise.security.SecurityLifecycle onInitialization
 INFORMACIÓN: Security Service(s) started successfully.
-nov 05, 2020 7:20:16 PM org.eclipse.persistence.session.file:/C:/Users/PROPIE~1/AppData/Local/Temp/gfembed1128825752031245232tmp/applications/classes/_CompUsuario-ejbPU
+nov 07, 2020 6:53:55 PM org.eclipse.persistence.session.file:/C:/Users/PROPIE~1/AppData/Local/Temp/gfembed6125469838805428913tmp/applications/classes/_CompUsuario-ejbPU
 INFORMACIÓN: EclipseLink, version: Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd
-nov 05, 2020 7:20:16 PM org.eclipse.persistence.session.file:/C:/Users/PROPIE~1/AppData/Local/Temp/gfembed1128825752031245232tmp/applications/classes/_CompUsuario-ejbPU.connection
-INFORMACIÓN: file:/C:/Users/PROPIE~1/AppData/Local/Temp/gfembed1128825752031245232tmp/applications/classes/_CompUsuario-ejbPU login successful
-nov 05, 2020 7:20:16 PM org.eclipse.persistence.session.file:/C:/Users/PROPIE~1/AppData/Local/Temp/gfembed1128825752031245232tmp/applications/classes/_CompUsuario-ejbPU.server
+nov 07, 2020 6:53:55 PM org.eclipse.persistence.session.file:/C:/Users/PROPIE~1/AppData/Local/Temp/gfembed6125469838805428913tmp/applications/classes/_CompUsuario-ejbPU.connection
+INFORMACIÓN: file:/C:/Users/PROPIE~1/AppData/Local/Temp/gfembed6125469838805428913tmp/applications/classes/_CompUsuario-ejbPU login successful
+nov 07, 2020 6:53:55 PM org.eclipse.persistence.session.file:/C:/Users/PROPIE~1/AppData/Local/Temp/gfembed6125469838805428913tmp/applications/classes/_CompUsuario-ejbPU.server
 ADVERTENCIA: Failed to find MBean Server: null or empty List returned from MBeanServerFactory.findMBeanServer(null)
-nov 05, 2020 7:20:16 PM com.sun.ejb.containers.BaseContainer initializeHome
+nov 07, 2020 6:53:55 PM com.sun.ejb.containers.BaseContainer initializeHome
 INFORMACIÓN: Portable JNDI names for EJB UsuarioFacade: [java:global/classes/UsuarioFacade!Persistencia.UsuarioFacadeLocal, java:global/classes/UsuarioFacade]
-nov 05, 2020 7:20:16 PM com.sun.ejb.containers.BaseContainer initializeHome
+nov 07, 2020 6:53:55 PM com.sun.ejb.containers.BaseContainer initializeHome
 INFORMACIÓN: Portable JNDI names for EJB RolempleadoFacade: [java:global/classes/RolempleadoFacade!Persistencia.RolempleadoFacadeLocal, java:global/classes/RolempleadoFacade]
-nov 05, 2020 7:20:16 PM com.sun.ejb.containers.BaseContainer initializeHome
+nov 07, 2020 6:53:55 PM com.sun.ejb.containers.BaseContainer initializeHome
 INFORMACIÓN: Portable JNDI names for EJB FachadaCompUsuario: [java:global/classes/FachadaCompUsuario!Despliegue.FachadaCompUsuarioLocal, java:global/classes/FachadaCompUsuario]
-nov 05, 2020 7:20:16 PM com.sun.ejb.containers.BaseContainer initializeHome
+nov 07, 2020 6:53:55 PM com.sun.ejb.containers.BaseContainer initializeHome
 INFORMACIÓN: Portable JNDI names for EJB EmpleadoFacade: [java:global/classes/EmpleadoFacade!Persistencia.EmpleadoFacadeLocal, java:global/classes/EmpleadoFacade]
-nov 05, 2020 7:20:16 PM com.sun.ejb.containers.BaseContainer initializeHome
+nov 07, 2020 6:53:55 PM com.sun.ejb.containers.BaseContainer initializeHome
 INFORMACIÓN: Portable JNDI names for EJB EmpresaFacade: [java:global/classes/EmpresaFacade, java:global/classes/EmpresaFacade!Persistencia.EmpresaFacadeLocal]
-nov 05, 2020 7:20:16 PM org.jboss.weld.bootstrap.WeldStartup <clinit>
+nov 07, 2020 6:53:55 PM org.jboss.weld.bootstrap.WeldStartup <clinit>
 INFO: WELD-000900: 2.2.2 (Final)
-nov 05, 2020 7:20:17 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
+nov 07, 2020 6:53:56 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
 WARN: WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType<Object>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
-nov 05, 2020 7:20:17 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
+nov 07, 2020 6:53:56 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
 WARN: WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<Object>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
-nov 05, 2020 7:20:17 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
+nov 07, 2020 6:53:56 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
 WARN: WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<Object>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
-nov 05, 2020 7:20:17 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
+nov 07, 2020 6:53:56 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
 WARN: WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType<Object>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
-nov 05, 2020 7:20:17 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
+nov 07, 2020 6:53:56 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
 WARN: WELD-000411: Observer method [BackedAnnotatedMethod] private org.glassfish.jersey.gf.cdi.internal.CdiComponentProvider.processAnnotatedType(@Observes ProcessAnnotatedType<Object>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
-nov 05, 2020 7:20:17 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
+nov 07, 2020 6:53:56 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
 WARN: WELD-000411: Observer method [BackedAnnotatedMethod] private org.glassfish.jersey.gf.cdi.internal.CdiComponentProvider.processAnnotatedType(@Observes ProcessAnnotatedType<Object>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
-nov 05, 2020 7:20:17 PM org.glassfish.deployment.admin.DeployCommand execute
-INFORMACIÓN: classes was successfully deployed in 6.547 milliseconds.
-nov 05, 2020 7:20:17 PM org.eclipse.persistence.session.file:/C:/Users/PROPIE~1/AppData/Local/Temp/gfembed1128825752031245232tmp/applications/classes/_CompUsuario-ejbPU.connection
-INFORMACIÓN: file:/C:/Users/PROPIE~1/AppData/Local/Temp/gfembed1128825752031245232tmp/applications/classes/_CompUsuario-ejbPU logout successful
-nov 05, 2020 7:20:23 PM com.sun.enterprise.connectors.service.ResourceAdapterAdminServiceImpl sendStopToResourceAdapter
+nov 07, 2020 6:53:57 PM org.glassfish.deployment.admin.DeployCommand execute
+INFORMACIÓN: classes was successfully deployed in 6.331 milliseconds.
+nov 07, 2020 6:53:57 PM org.eclipse.persistence.session.file:/C:/Users/PROPIE~1/AppData/Local/Temp/gfembed6125469838805428913tmp/applications/classes/_CompUsuario-ejbPU.connection
+INFORMACIÓN: file:/C:/Users/PROPIE~1/AppData/Local/Temp/gfembed6125469838805428913tmp/applications/classes/_CompUsuario-ejbPU logout successful
+nov 07, 2020 6:54:03 PM com.sun.enterprise.connectors.service.ResourceAdapterAdminServiceImpl sendStopToResourceAdapter
 INFORMACIÓN: RAR7094: __ds_jdbc_ra shutdown successful.
-nov 05, 2020 7:20:23 PM org.glassfish.admin.mbeanserver.JMXStartupService shutdown
+nov 07, 2020 6:54:03 PM org.glassfish.admin.mbeanserver.JMXStartupService shutdown
 INFORMACIÓN: JMXStartupService and JMXConnectors have been shut down.
-nov 05, 2020 7:20:23 PM org.glassfish.admin.mbeanserver.JMXStartupService shutdown
+nov 07, 2020 6:54:03 PM org.glassfish.admin.mbeanserver.JMXStartupService shutdown
 INFORMACIÓN: JMXStartupService and JMXConnectors have been shut down.
-nov 05, 2020 7:20:23 PM com.sun.enterprise.v3.server.AppServerStartup stop
+nov 07, 2020 6:54:03 PM com.sun.enterprise.v3.server.AppServerStartup stop
 INFORMACIÓN: Shutdown procedure finished
 ]]></system-err>
 </testsuite>
