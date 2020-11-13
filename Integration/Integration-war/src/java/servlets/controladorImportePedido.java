@@ -1,3 +1,5 @@
+package servlets;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,8 +21,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Propietario
  */
-@WebServlet(urlPatterns = {"/controladorProcesarBorrar"})
-public class controladorProcesarBorrar extends HttpServlet {
+@WebServlet(urlPatterns = {"/controladorImportePedido"})
+public class controladorImportePedido extends HttpServlet {
     @EJB
     private fachadaCompPedidoLocal fachadaCompPedido;
 
@@ -37,17 +39,10 @@ public class controladorProcesarBorrar extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        String message = "";
-        String nifcif = (String)session.getAttribute("NifCif");
-        int confId = Integer.parseInt(request.getParameter("idConf"));
-        boolean success = fachadaCompPedido.delPedido(confId, nifcif);
-        if(success){
-            message = "Eliminado con éxito";
-        }else{
-            message = "Fallo eliminando";
-        }
-        session.setAttribute("mensaje", message);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/borrarPedido.jsp");
+        String message = "IMPORTE PEDIDO";
+        session.setAttribute("mensaje",message);
+        session.setAttribute("pago", fachadaCompPedido.importeAbonar((String)session.getAttribute("NifCif")));
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/importeAbonar.jsp");
                 dispatcher.forward(request, response);
     }
 

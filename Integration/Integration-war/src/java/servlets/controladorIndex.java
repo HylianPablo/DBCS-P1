@@ -1,14 +1,15 @@
+package servlets;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import Despliegue.fachadaCompCatalogoRemote;
-import Despliegue.fachadaCompPedidoLocal;
-import Dominio.Configuracionpc;
+import Despliegue.FachadaCompUsuarioLocal;
+import Dominio.Empleado;
+import Dominio.Empresa;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,12 +23,10 @@ import javax.servlet.http.HttpSession;
  *
  * @author Propietario
  */
-@WebServlet(urlPatterns = {"/controladorHacerPedido"})
-public class controladorHacerPedido extends HttpServlet {
+@WebServlet(urlPatterns = {"/controladorIndex"})
+public class controladorIndex extends HttpServlet {
     @EJB
-    private fachadaCompCatalogoRemote fachadaCompCatalogo;
-    @EJB
-    private fachadaCompPedidoLocal fachadaCompPedido;
+    private FachadaCompUsuarioLocal fachadaCompUsuario;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,21 +39,43 @@ public class controladorHacerPedido extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
         response.setContentType("text/html;charset=UTF-8");
-        session.setAttribute("mensaje", "CREAR PEDIDO");
-        List<Configuracionpc> catalogo = fachadaCompCatalogo.getCatalogo();
-        session.setAttribute("catalogo",catalogo);
-        
-        float precios[] = new float[catalogo.size()];
-        for(int i=0;i<catalogo.size();i++){
-            precios[i]=fachadaCompCatalogo.getPrecioTotal(catalogo.get(i).getIdconfiguracion());
+        HttpSession session = request.getSession();
+        String nifcif = request.getParameter("NifCif");
+        String password = request.getParameter("clave");
+        String url="";
+        String message="";
+
+        Empresa empresa = fachadaCompUsuario.getEmpresa(nifcif);
+        if(empresa!=null){
+            if(empresa.getUsuario().getPassword().equals(password) && request.getParameter("botonC")!=null){
+                url = "/cliente.jsp";
+                message="Bienvenido cliente";
+                
+            }else{
+                message = "Contraseña incorrecta";
+                url = "/index.jsp";
+            }
+        }else{
+            Empleado empleado = fachadaCompUsuario.getEmpleado(nifcif);
+            if(empleado!=null){
+                if(empleado.getUsuario().getPassword().equals(password) && request.getParameter("botonE")!=null){
+                    message="Bienvenido empleado";
+                    url = "/empleado.jsp";
+                }else{
+                    message="Contraseña incorrecta";
+                    url = "/index.jsp";
+                }
+            }else{
+                message="Usuario incorrecto";
+                url = "/index.jsp";
+            }
         }
-        session.setAttribute("precios",precios);
-        String url = "/pedido.jsp";
+        session.setAttribute("NifCif",nifcif);
+        session.setAttribute("mensaje",message);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
                 dispatcher.forward(request, response);
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -1,11 +1,11 @@
+package servlets;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import Despliegue.FachadaCompUsuarioLocal;
-import Dominio.Empleado;
-import Dominio.Empresa;
+import Despliegue.fachadaCompPedidoLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -21,10 +21,10 @@ import javax.servlet.http.HttpSession;
  *
  * @author Propietario
  */
-@WebServlet(urlPatterns = {"/controladorIndex"})
-public class controladorIndex extends HttpServlet {
+@WebServlet(urlPatterns = {"/controladorProcesarBorrar"})
+public class controladorProcesarBorrar extends HttpServlet {
     @EJB
-    private FachadaCompUsuarioLocal fachadaCompUsuario;
+    private fachadaCompPedidoLocal fachadaCompPedido;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,41 +39,18 @@ public class controladorIndex extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        String nifcif = request.getParameter("NifCif");
-        String password = request.getParameter("clave");
-        String url="";
-        String message="";
-
-        Empresa empresa = fachadaCompUsuario.getEmpresa(nifcif);
-        if(empresa!=null){
-            if(empresa.getUsuario().getPassword().equals(password) && request.getParameter("botonC")!=null){
-                url = "/cliente.jsp";
-                message="Bienvenido cliente";
-                
-            }else{
-                message = "Contraseña incorrecta";
-                url = "/index.jsp";
-            }
+        String message = "";
+        String nifcif = (String)session.getAttribute("NifCif");
+        int confId = Integer.parseInt(request.getParameter("idConf"));
+        boolean success = fachadaCompPedido.delPedido(confId, nifcif);
+        if(success){
+            message = "Eliminado con éxito";
         }else{
-            Empleado empleado = fachadaCompUsuario.getEmpleado(nifcif);
-            if(empleado!=null){
-                if(empleado.getUsuario().getPassword().equals(password) && request.getParameter("botonE")!=null){
-                    message="Bienvenido empleado";
-                    url = "/empleado.jsp";
-                }else{
-                    message="Contraseña incorrecta";
-                    url = "/index.jsp";
-                }
-            }else{
-                message="Usuario incorrecto";
-                url = "/index.jsp";
-            }
+            message = "Fallo eliminando";
         }
-        session.setAttribute("NifCif",nifcif);
-        session.setAttribute("mensaje",message);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+        session.setAttribute("mensaje", message);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/borrarPedido.jsp");
                 dispatcher.forward(request, response);
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

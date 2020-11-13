@@ -1,12 +1,12 @@
+package servlets;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import Despliegue.fachadaCompPedidoLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,10 +19,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Propietario
  */
-@WebServlet(urlPatterns = {"/controladorImportePedido"})
-public class controladorImportePedido extends HttpServlet {
-    @EJB
-    private fachadaCompPedidoLocal fachadaCompPedido;
+@WebServlet(urlPatterns = {"/controladorBorrarPedido"})
+public class controladorBorrarPedido extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +35,9 @@ public class controladorImportePedido extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        String message = "IMPORTE PEDIDO";
+        String message = "BORRAR PEDIDO";
         session.setAttribute("mensaje",message);
-        session.setAttribute("pago", fachadaCompPedido.importeAbonar((String)session.getAttribute("NifCif")));
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/importeAbonar.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/borrarPedido.jsp");
                 dispatcher.forward(request, response);
     }
 

@@ -1,10 +1,14 @@
+package servlets;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import Despliegue.fachadaCompPedidoLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,8 +21,10 @@ import javax.servlet.http.HttpSession;
  *
  * @author Propietario
  */
-@WebServlet(urlPatterns = {"/controladorBorrarPedido"})
-public class controladorBorrarPedido extends HttpServlet {
+@WebServlet(urlPatterns = {"/controladorProcesarPedido"})
+public class controladorProcesarPedido extends HttpServlet {
+    @EJB
+    private fachadaCompPedidoLocal fachadaCompPedido;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,10 +39,21 @@ public class controladorBorrarPedido extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        String message = "BORRAR PEDIDO";
-        session.setAttribute("mensaje",message);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/borrarPedido.jsp");
+        String nifcif = (String) session.getAttribute("NifCif");
+        int cantidad = Integer.parseInt(request.getParameter("cantidad"));
+        int confId = Integer.parseInt(request.getParameter("idConf"));
+        boolean success = fachadaCompPedido.addPedido(cantidad, confId, nifcif);
+        String message;
+        if(success){
+            message = "Añadido con éxito";
+        }else{
+            message = "Fallo al añadir";
+        }
+        session.setAttribute("mensaje", message);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/cliente.jsp");
                 dispatcher.forward(request, response);
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

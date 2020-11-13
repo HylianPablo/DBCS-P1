@@ -1,11 +1,16 @@
+package servlets;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import Despliegue.fachadaCompCatalogoRemote;
 import Despliegue.fachadaCompPedidoLocal;
+import Dominio.Configuracionpc;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,8 +24,10 @@ import javax.servlet.http.HttpSession;
  *
  * @author Propietario
  */
-@WebServlet(urlPatterns = {"/controladorProcesarPedido"})
-public class controladorProcesarPedido extends HttpServlet {
+@WebServlet(urlPatterns = {"/controladorHacerPedido"})
+public class controladorHacerPedido extends HttpServlet {
+    @EJB
+    private fachadaCompCatalogoRemote fachadaCompCatalogo;
     @EJB
     private fachadaCompPedidoLocal fachadaCompPedido;
 
@@ -35,22 +42,20 @@ public class controladorProcesarPedido extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        String nifcif = (String) session.getAttribute("NifCif");
-        int cantidad = Integer.parseInt(request.getParameter("cantidad"));
-        int confId = Integer.parseInt(request.getParameter("idConf"));
-        boolean success = fachadaCompPedido.addPedido(cantidad, confId, nifcif);
-        String message;
-        if(success){
-            message = "Añadido con éxito";
-        }else{
-            message = "Fallo al añadir";
-        }
-        session.setAttribute("mensaje", message);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
-                dispatcher.forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        session.setAttribute("mensaje", "CREAR PEDIDO");
+        List<Configuracionpc> catalogo = fachadaCompCatalogo.getCatalogo();
+        session.setAttribute("catalogo",catalogo);
         
+        float precios[] = new float[catalogo.size()];
+        for(int i=0;i<catalogo.size();i++){
+            precios[i]=fachadaCompCatalogo.getPrecioTotal(catalogo.get(i).getIdconfiguracion());
+        }
+        session.setAttribute("precios",precios);
+        String url = "/pedido.jsp";
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+                dispatcher.forward(request, response);
         
     }
 
