@@ -1,1 +1,11 @@
 /CompPedido/CompPedido-ejb/dist/
+/Integration/nbproject/private/
+/Integration/Integration-war/nbproject/private/
+/Integration/Integration-ejb/nbproject/private/
+/Integration/build/
+/Integration/Integration-ejb/build/
+/Integration/Integration-ejb/dist/
+/Integration/Integration-war/build/
+/Integration/Integration-war/dist/
+/CompPedido/CompPedido-war/build/
+/CompPedido/CompPedido-war/dist/

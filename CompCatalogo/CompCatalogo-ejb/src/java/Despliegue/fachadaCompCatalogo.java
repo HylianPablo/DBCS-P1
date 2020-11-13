@@ -87,13 +87,13 @@ public class fachadaCompCatalogo implements fachadaCompCatalogoRemote {
             }                      
         }
         cf.setDescripcioncomponenteList(listaComps);
-        try{
+        //try{
             configuracionpcFacade.create(cf);
-        }catch(Exception ex){
+        //}catch(Exception ex){
             /* En caso de que la creación falle, se crea una excepción y se devuelve false */
-            System.err.println(ex.getMessage());
-            return false;
-        }
+        //    System.err.println(ex.getMessage());
+        //    return false;
+        //}
         return true;
     }
     
